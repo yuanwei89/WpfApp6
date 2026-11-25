@@ -5,9 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="20261125選課系統" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="500*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500*" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="500*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Background="#FFF1C8C8" Height="51" VerticalAlignment="Center">
+            <Label Content="學生" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,0,0" FontSize="16" FontWeight="Bold"/>
+            <ComboBox x:Name="StudentComboBox" Width="305" HorizontalAlignment="Left" Height="22" Margin="30,0,0,0" FontSize="16"/>
+        </StackPanel>
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="3">
+            <StatusBarItem >
+                <TextBlock x:Name="StatusTextBlock1" Width="300" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="100,0,0,0"/>
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl Grid.Row="1" Margin="3,3,3,3">
+            <TabItem Header="以教師分類課程">
+                <TreeView x:Name="TeacherTreeView" Background="#FFDFD7F9">
 
-        
+                </TreeView>
+            </TabItem>
+            <TabItem Header="所有課程">
+                <ListBox x:Name="CourseListBox" Background="#FFEDE5F1">
+                </ListBox>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button x:Name="AddCourseButton" Content="選課" Width="60" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontSize="16"/>
+            <Button x:Name="DeleteCourseButton" Content="退選" Width="60" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" FontSize="16"/>
+            <Button x:Name="SaveCourseButton" Content="存檔" Width="60" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" FontSize="16"/>
+        </StackPanel>
+        <ListView Grid.Row="1" Grid.Column="2" Background="#FFFAEED7">
+             
+        </ListView>
     </Grid>
 </Window>
